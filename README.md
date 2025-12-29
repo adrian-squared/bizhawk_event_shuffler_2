@@ -1,7 +1,7 @@
 # Bizhawk Ring Shuffler 2
 Plugin for Bizhawk Shuffler 2 inspired by Alistair Aitcheson's Bizhawk Ring Shuffler
 
-For now the games' names are hardcoded to be the Rev0 US versions, I will probably add the other revisions when I get around to
+For now the games are hardcoded to be the Rev0 US versions, and other revisions will probably not be detected, I will add them when I get around to it
 
 Currently supports
 
@@ -11,4 +11,6 @@ Currently supports
 
 **32X:** Knuckles' Chaotix
 
-**Master System:** Sonic 1
+**Master System:** Sonic 1, 2, Chaos, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
+
+**Game Gear:** Sonic Drift, Drift 2, Triple Trouble
