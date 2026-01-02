@@ -3,13 +3,13 @@ Plugin for Bizhawk Shuffler 2 inspired by Alistair Aitcheson's Bizhawk Ring Shuf
 
 Currently supports
 
-**Mega Drive:** Sonic 1, 2, 3, & Knuckles, Eraser, Spinball, 3D, Dr. Robotnik's Mean Bean Machine, Sonic & Knuckles+Sonic 1 (Blue Spheres)
+**Mega Drive:** Sonic 1, 2, 3, & Knuckles, Eraser, Spinball, 3D, 3D Director's Cut hack, Dr. Robotnik's Mean Bean Machine, Sonic & Knuckles+Sonic 1 (Blue Spheres)
 
 **Mega-CD:** Sonic CD
 
 **32X:** Knuckles' Chaotix
 
-**Master System:** Sonic 1, 2, Chaos, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
+**Master System:** Sonic 1, 2, Chaos, Spinball, Blast, Dr. Robotnik's Mean Bean Machine, Triple Trouble SMS Hack, Sonic 1 "Perfect System" hack
 
 **Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
 
