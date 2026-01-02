@@ -55,9 +55,11 @@ function swap_game(next_game)
 	return load_game(config.current_game)
 end
 
-function plugin.on_game_load(data)
+function plugin.on_game_load(data) -- hash is used if game isn't in the database, else just the name is used for readability's sake
 	name = gameinfo.getromname()
+	hash = gameinfo.getromhash()
 	-- console.writeline(gameinfo.getromname())
+	-- console.writeline(gameinfo.getromhash())
 end
 -- redundant fonction in case I need to add smth later
 function ring_swap()
@@ -99,14 +101,20 @@ function plugin.on_frame(data, settings)
 			return
 		end
 		oldring = memory.read_u16_be(0x0A5A,"68K RAM")
-	elseif name == "Sonic and Knuckles & Sonic 1 (W) [!]" or name == "Sonic & Knuckles + Sonic The Hedgehog (JK)" then
+	elseif hash == "4072D34E119E199131B839D338F1FC38E472203A" then -- 3D Blast Director's Cut
+		if memory.read_u16_be(0x0AA2,"68K RAM") > oldring then
+			ring_swap()
+			return
+		end
+		oldring = memory.read_u16_be(0x0AA2,"68K RAM")
+	elseif name == "Sonic and Knuckles & Sonic 1 (W) [!]" or hash == "252FDD1E3F1DC630E13A5FF51162BB454E6FED34" then -- Blue Spheres
 		if memory.read_u16_be(0xE442,"68K RAM") < oldring then
 			ring_swap()
 			return
 		end
 		oldring = memory.read_u16_be(0xE442,"68K RAM")
 	-- Mega-CD Games
-	elseif name == "Sonic CD (USA)" or name == "Sonic CD (USA) (RE125)" or name == "Sonic CD (Europe)" or name == "Sonic the Hedgehog CD (Japan)" then
+	elseif hash == "AFC5F20CEFD2AADFC8C146EB27623F75" then -- Sonic CD (JP)
 		if memory.read_u16_be(0x1512,"68K RAM") > oldring then
 			ring_swap()
 			return
@@ -120,7 +128,7 @@ function plugin.on_frame(data, settings)
 		end
 		oldring = memory.read_u16_be(0xE008,"68K RAM")
 	-- Master System & Game Gear Games
-	elseif name == "Sonic The Hedgehog (UE)" then -- SMS Version
+	elseif name == "Sonic The Hedgehog (UE)" or hash == "815A0E5449232CD5B5CA935D564C5C1F7EB0C514" then -- SMS Version and "Perfect System" hack
 		if memory.read_u8(0x12AA,"Main RAM") > oldring then
 			ring_swap()
 			return
@@ -174,7 +182,7 @@ function plugin.on_frame(data, settings)
 			return
 		end
 		oldring = memory.read_u8(0x1E6A,"Main RAM")
-	elseif name == "Sonic The Hedgehog - Triple Trouble (UE)" or name == "Sonic & Tails 2 (J)" then
+	elseif name == "Sonic The Hedgehog - Triple Trouble (UE)" or name == "Sonic & Tails 2 (J)" or hash == "4E3CB96724E353F8744FA3F46B39D73324456F93" then -- Game Gear Versions and SMS hack
 		if memory.read_u8(0x1159,"Main RAM") > oldring then
 			ring_swap()
 			return
@@ -193,19 +201,19 @@ function plugin.on_frame(data, settings)
 		end
 		oldring = memory.read_u8(0x125E,"Main RAM")
 	-- Saturn Games
-	elseif name == "Sonic R (USA, Brazil)" then -- Need to add JP & EU versions
+	elseif hash == "62F6C7B8039EE5957CFEFA35CB85CBE8" then -- Sonic R
 		if memory.read_u16_be(0x00B3F0,"Work Ram High") > oldring then
 			ring_swap()
 			return
 		end
 		oldring = memory.read_u16_be(0x00B3F0,"Work Ram High")
-	elseif name == "Sonic 3D Blast (USA)" then -- Need to add JP & EU versions
+	elseif hash == "CAF83E879EC362D01845A950E0DA7826" then -- Sonic 3D Blast
 		if memory.read_u16_be(0x09800C,"Work Ram High") > oldring then
 			ring_swap()
 			return
 		end
 		oldring = memory.read_u16_be(0x09800C,"Work Ram High")
-	elseif name == "Sonic Jam (USA)" then -- Need to add JP & EU versions
+	elseif hash == "396F24E2C149B04A368CA0CE66286833" then -- Sonic Jam
 		if memory.read_u16_be(0x0FFD26,"Work Ram High") > oldring then
 			ring_swap()
 			return
@@ -263,7 +271,7 @@ function plugin.on_frame(data, settings)
 		end
 		oldring = memory.read_u16_be(0x06D13900,"FCRAM")
 	-- Neo-Geo Pocket Colour Games
-	elseif name == "Sonic The Hedgehog - Pocket Adventure (W)" then
+	elseif hash == "5A881D8124D902B4A98D76362AD62566A86F0ABA" then -- Sonic Pocket Adventure
 		if memory.read_u16_be(0x27A8,"RAM") > oldring then
 			ring_swap()
 			return
