@@ -114,7 +114,7 @@ function plugin.on_frame(data, settings)
 		end
 		oldring = memory.read_u16_be(0xE442,"68K RAM")
 	-- Mega-CD Games
-	elseif hash == "AFC5F20CEFD2AADFC8C146EB27623F75" then -- Sonic CD (JP)
+	elseif hash == "AFC5F20CEFD2AADFC8C146EB27623F75" or hash == "BBA401CFF383AD7946978A600E756561" or hash == "D0E2A628A5DA9F72402559B2535C05D1" then -- in order: Sonic CD (J);Sonic CD (U);Sonic CD (E)
 		if memory.read_u16_be(0x1512,"68K RAM") > oldring then
 			ring_swap()
 			return
@@ -201,19 +201,19 @@ function plugin.on_frame(data, settings)
 		end
 		oldring = memory.read_u8(0x125E,"Main RAM")
 	-- Saturn Games
-	elseif hash == "62F6C7B8039EE5957CFEFA35CB85CBE8" then -- Sonic R
+	elseif hash == "62F6C7B8039EE5957CFEFA35CB85CBE8" or hash == "BE0EBA13E9C667F05E8C2B50F3F26887" or hash == "E58EF014C3866463BCE29A703C5BD345" then -- Sonic R (UB); Sonic R (E); Sonic R (J)
 		if memory.read_u16_be(0x00B3F0,"Work Ram High") > oldring then
 			ring_swap()
 			return
 		end
 		oldring = memory.read_u16_be(0x00B3F0,"Work Ram High")
-	elseif hash == "CAF83E879EC362D01845A950E0DA7826" then -- Sonic 3D Blast
+	elseif hash == "CAF83E879EC362D01845A950E0DA7826" or hash == "3F17253534A9877B1D24B5E46A2489E8" or hash == "76C4F65FA7BE4E5C2CD1D8D405EBF577" then -- Sonic 3D Blast (U); Sonic 3D Blast (E); Sonic 3D Blast (J)
 		if memory.read_u16_be(0x09800C,"Work Ram High") > oldring then
 			ring_swap()
 			return
 		end
 		oldring = memory.read_u16_be(0x09800C,"Work Ram High")
-	elseif hash == "396F24E2C149B04A368CA0CE66286833" then -- Sonic Jam
+	elseif hash == "396F24E2C149B04A368CA0CE66286833" or hash == "44C29A96FA15DE6FBD9E040173223F22" or hash == "230AB7AC987E373EF26219B2CD64BA35" or hash == "7547BDD9EC4CFAADDFC4EA9160F4D70E" then -- Sonic Jam
 		if memory.read_u16_be(0x0FFD26,"Work Ram High") > oldring then
 			ring_swap()
 			return
