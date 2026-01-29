@@ -13,6 +13,8 @@ Currently supports
 
 **Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
 
+**NES:** Super Mario Bros.
+
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
 
 **Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
