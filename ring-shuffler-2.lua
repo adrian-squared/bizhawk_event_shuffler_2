@@ -245,12 +245,12 @@ function plugin.on_frame(data, settings)
 			return
 		end
 		oldring = memory.read_u16_be(0x090B6E,"Main RAM")
-	elseif name == "Sonic Rush Adventure (USA) (En,Ja,Fr,De,Es,It)" or name == "Sonic Rush Adventure (Japan) (En,Ja,Fr,De,Es,It)" or name == "Sonic Rush Adventure (Europe) (En,Ja,Fr,De,Es,It)" or name == "Sonic Rush Adventure (Europe) (En,Ja,Fr,De,Es,It) (Rev 1)" or name == "Sonic Rush Adventure (K)" then
-		if memory.read_u16_be(0x18F6BE,"Main RAM") > oldring then
-			ring_swap()
-			return
-		end
-		oldring = memory.read_u16_be(0x18F6BE,"Main RAM")
+--	elseif name == "Sonic Rush Adventure (USA) (En,Ja,Fr,De,Es,It)" or name == "Sonic Rush Adventure (Japan) (En,Ja,Fr,De,Es,It)" or name == "Sonic Rush Adventure (Europe) (En,Ja,Fr,De,Es,It)" or name == "Sonic Rush Adventure (Europe) (En,Ja,Fr,De,Es,It) (Rev 1)" or name == "Sonic Rush Adventure (K)" then
+--		if memory.read_u16_be(0x18F6BE,"Main RAM") > oldring then
+--			ring_swap()
+--			return
+--		end
+--		oldring = memory.read_u16_be(0x18F6BE,"Main RAM") -- commented out until I figure out how to detect when not in a level
 	elseif name == "Sonic Colors (USA) (En,Ja,Fr,De,Es,It)" or name == "Sonic Colors (Japan) (En,Ja,Fr,De,Es,It)" or name == "Sonic Colours (Europe) (En,Ja,Fr,De,Es,It)" then
 		if memory.read_u16_be(0x19B936,"Main RAM") > oldring then
 			ring_swap()
