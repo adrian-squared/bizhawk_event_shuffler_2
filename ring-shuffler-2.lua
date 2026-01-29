@@ -1,6 +1,6 @@
 local plugin = {}
 
-plugin.name = "Sonic Ring Shuffler"
+plugin.name = "New Event Shuffler"
 plugin.author = "adrian_squared"
 plugin.settings = {}
 
@@ -70,6 +70,7 @@ end
 -- called each frame
 function plugin.on_frame(data, settings)
 	next_swap_time = next_swap_time+1000
+	-- -- Sonic games
 	-- Mega Drive Games
 	if name == "Sonic The Hedgehog (W) (REV00) [!]" or name == "Sonic The Hedgehog (W) (REV01) [!]" or name == "Sonic The Hedgehog 2 (W) (REV00) [!]" or name == "Sonic The Hedgehog 2 (W) (REV01) [!]" or name == "Sonic The Hedgehog 3 (U) [!]" or name == "Sonic The Hedgehog 3 (J) [!]" or name == "Sonic The Hedgehog 3 (E) [!]" or name == "Sonic and Knuckles (W) [!]" or name == "Sonic and Knuckles & Sonic 2 (W) [!]" or name == "Sonic & Knuckles + Sonic The Hedgehog 3 (E)" or name == "Sonic & Knuckles + Sonic The Hedgehog 3 (J)" or name == "Sonic and Knuckles & Sonic 3 (W) [!]" then
 		if memory.read_u16_be(0xFE20,"68K RAM") > oldring then
@@ -284,6 +285,16 @@ function plugin.on_frame(data, settings)
 			return
 		end
 		oldring = memory.read_u16_be(0xB0E8,"m68000 : ram : 0xE00000-0xE0FFFF")
+	end
+	
+	-- -- Mario Games
+	-- NES Games
+	elseif name == "Super Mario Bros." then
+		if memory.read_u8(0x075E,"RAM") > oldring then
+			ring_swap()
+			return
+		end
+		oldring = memory.read_u8(0x075E,"RAM")
 	end
 end
 
