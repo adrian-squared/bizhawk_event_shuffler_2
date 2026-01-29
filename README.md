@@ -17,7 +17,7 @@ Currently supports
 
 **Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
 
-**DS:** Sonic Rush, Rush Adventures, Colours
+**DS:** Sonic Rush, Colours
 
 **3DS:** Sonic Generations, Lost World
 
