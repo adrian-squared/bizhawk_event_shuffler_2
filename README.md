@@ -26,3 +26,7 @@ Currently supports
 **Neo-Geo Pocket Colour:** Sonic Pocket Adventure
 
 **Arcade:** SegaSonic Bros.
+
+# How do I use this
+
+simply place the event-shuffler-2.lua file (you can download it directly) in the bizhawk-shuffler-2/plugins directory and select "set up plugins" when starting a run
