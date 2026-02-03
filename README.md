@@ -1,4 +1,4 @@
-# Bizhawk Ring Shuffler 2
+# Bizhawk Event Shuffler 2
 Plugin for Bizhawk Shuffler 2 inspired by Alistair Aitcheson's Bizhawk Ring Shuffler
 
 Currently supports
@@ -19,7 +19,7 @@ Currently supports
 
 **Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
 
-**DS:** Sonic Rush, Colours
+**DS:** Sonic Rush, ~~Rush Adventure~~, Colours
 
 **3DS:** Sonic Generations, Lost World
 
