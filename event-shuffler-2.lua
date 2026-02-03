@@ -6,7 +6,7 @@ plugin.settings = {}
 
 plugin.description =
 [[
-    This plugin is designed to switch between games once the player obtains a ring.
+    This plugin is designed to switch between games once the player obtains a ring (or equivalent event depending on the game).
 ]]
 
 oldring = 0
