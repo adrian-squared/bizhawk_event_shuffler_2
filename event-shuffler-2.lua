@@ -63,9 +63,9 @@ function plugin.on_game_load(data) -- hash is used if game isn't in the database
 	-- console.writeline(gameinfo.getromhash())
 	-- console.writeline(emu.getsystemid())
 end
--- redundant fonction in case I need to add smth later
+
 function ring_swap()
-	oldring = 1000000
+	oldring = 1000000 -- high number to replace garbage data on game swap (to be taken into account in when you're looking for a decrease in value)
 	swap_game()
 end
 
@@ -307,12 +307,18 @@ function plugin.on_frame(data, settings)
 		end
 	-- NES Games
 	elseif sysid == "NES" then
-		if name == "Super Mario Bros." then
+		if name == "Super Mario Bros." or hash == "CB301E125D9DCCC2D2D1678BA8C622D3B6BCE801" or hash == "47ADEB36EB595140F5E1F69A972165366E8DB7AC" or hash == "20E50128742162EE47561DB9E82B2836399C880C" or hash == "383AD8E3890A95DE9595F0A6087648F51177DA13" or hash == "08927227B6FF67F42E759505D176CD924931BD14" or hash == "B2DBC55EFCAE77ABAD6207B802C0A76D7A47ED0D" or hash == "CB9FB99B7731ED05B81D4B6BAE06E0FBF8D21FA8" or hash == "F30BDD3C556604D7EAA6D0F4864D5566E519B5D4" then --hashes (in order): 25th anniversary edition AU;JP;Lost Levels;SMB FDS;Lost Levels DV2;Lost Levels VC; Lost Levels Game & Watch; All Night Nippon
 			if memory.read_u8(0x075E,"RAM") > oldring then
 				ring_swap()
 				return
 			end
 			oldring = memory.read_u8(0x075E,"RAM")
+		elseif name == "Super Mario Bros. 3" or hash == "948A29F6E64B27E6E4556ADBBB673B723E3CF393" or hash == "332FEB7522E54A36F457EE1FBDEAB4236621044B" or hash == "AF5418EBFFCAF95A3EC60F576857BE678B0E9556" then -- hashes for VC versions
+			if memory.read_u8(0x1DA2,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x1DA2,"WRAM")
 		end
 	end
 end
