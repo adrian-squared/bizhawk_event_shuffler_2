@@ -320,6 +320,20 @@ function plugin.on_frame(data, settings)
 			end
 			oldring = memory.read_u8(0x1DA2,"WRAM")
 		end
+	elseif sysid == "SNES" then
+		if name == "Super Mario World (USA)" or name == "Super Mario World (Europe)" or name == "Super Mario World (Europe) (Rev 1)" or name == "Super Mario World - Super Mario Bros. 4 (Japan)" or hash == "50A2312099AE7CDF7140E6E66AC0E0A44B9E4779" or hash == "84DB8080746ED75B9174FFB59028CCD1FB9F4918" then --hashes for VC/NSO versions
+			if memory.read_u8(0x000DBF,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x000DBF,"WRAM")
+		elseif name == "Super Mario World 2 - Yoshi's Island (USA)" then
+			if memory.read_u8(0x00037B,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x00037B,"WRAM")
+		end
 	end
 end
 
