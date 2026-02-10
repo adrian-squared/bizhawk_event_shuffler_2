@@ -13,7 +13,9 @@ Currently supports
 
 **Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
 
-**NES:** Super Mario Bros.
+**NES:** Super Mario Bros., Super Mario Bros. 3
+
+**Famicom  Disk System:** Super Mario Bros. 2
 
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
 
@@ -30,3 +32,7 @@ Currently supports
 # How do I use this ?
 
 simply place the event-shuffler-2.lua file (you can download it directly) in the bizhawk-shuffler-2/plugins directory and select "set up plugins" when starting a run
+
+# Can you add <game> ?
+
+Sure, just create an issue (with some information with what event you'd like to swap the game, as I don't know every game) and I should respond and add it relatively quickly.
