@@ -33,6 +33,6 @@ Currently supports
 
 simply place the event-shuffler-2.lua file (you can download it directly) in the bizhawk-shuffler-2/plugins directory and select "set up plugins" when starting a run
 
-# Can you add <game> ?
+# Can you add \<game\> ?
 
 Sure, just create an issue (with some information with what event you'd like to swap the game, as I don't know every game) and I should respond and add it relatively quickly.
