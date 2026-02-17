@@ -15,7 +15,9 @@ Currently supports
 
 **NES:** Super Mario Bros., Super Mario Bros. 3
 
-**Famicom  Disk System:** Super Mario Bros. 2
+**Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB.
+
+**SNES:** Super Mario World, Yoshi's Island
 
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
 
