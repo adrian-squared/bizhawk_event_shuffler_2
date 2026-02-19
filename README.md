@@ -13,7 +13,7 @@ Currently supports
 
 **Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
 
-**NES:** Super Mario Bros., Super Mario Bros. 3
+**NES:** Super Mario Bros., Super Mario Bros. 3, Wrecking Crew, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario's Woods
 
 **Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB.
 
