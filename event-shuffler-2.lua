@@ -337,6 +337,18 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u8(0x0532,"RAM")
+		elseif name == "Yoshi's Cookie" or name == "Yoshi no Cookie" or hash == "8E1172B933ACAB32A141E17A7267AC55DA6C8BCF" or hash == "4E6F94D4689C9A70FF7E2477FCB3C1DA91D16996" then -- hashes for US and EU VC versions
+			if memory.read_u8(0X040C,"RAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0X040C,"RAM")
+		elseif name == "Wario's Woods" or name == "Wario no Mori" then
+			if memory.read_u8(0X1B60,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0X1B60,"WRAM")
 		end
 	-- SNES Games
 	elseif sysid == "SNES" then
