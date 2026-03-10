@@ -73,7 +73,7 @@ end
 function plugin.on_frame(data, settings)
 	next_swap_time = next_swap_time+1000
 	-- -- Sonic games
-	-- Mega Drive Games
+	-- Mega Drive & Mega-CD Games
 	if sysid == "GEN" then
 		if name == "Sonic The Hedgehog (W) (REV00) [!]" or name == "Sonic The Hedgehog (W) (REV01) [!]" or name == "Sonic The Hedgehog 2 (W) (REV00) [!]" or name == "Sonic The Hedgehog 2 (W) (REV01) [!]" or name == "Sonic The Hedgehog 3 (U) [!]" or name == "Sonic The Hedgehog 3 (J) [!]" or name == "Sonic The Hedgehog 3 (E) [!]" or name == "Sonic and Knuckles (W) [!]" or name == "Sonic and Knuckles & Sonic 2 (W) [!]" or name == "Sonic & Knuckles + Sonic The Hedgehog 3 (E)" or name == "Sonic & Knuckles + Sonic The Hedgehog 3 (J)" or name == "Sonic and Knuckles & Sonic 3 (W) [!]" then
 			if memory.read_u16_be(0xFE20,"68K RAM") > oldring then
@@ -338,17 +338,35 @@ function plugin.on_frame(data, settings)
 			end
 			oldring = memory.read_u8(0x0532,"RAM")
 		elseif name == "Yoshi's Cookie" or name == "Yoshi no Cookie" or hash == "8E1172B933ACAB32A141E17A7267AC55DA6C8BCF" or hash == "4E6F94D4689C9A70FF7E2477FCB3C1DA91D16996" then -- hashes for US and EU VC versions
-			if memory.read_u8(0X040C,"RAM") > oldring then
+			if memory.read_u8(0x040C,"RAM") > oldring then
 				ring_swap()
 				return
 			end
-			oldring = memory.read_u8(0X040C,"RAM")
+			oldring = memory.read_u8(0x040C,"RAM")
 		elseif name == "Wario's Woods" or name == "Wario no Mori" then
-			if memory.read_u8(0X1B60,"WRAM") > oldring then
+			if memory.read_u8(0x1B60,"WRAM") > oldring then
 				ring_swap()
 				return
 			end
-			oldring = memory.read_u8(0X1B60,"WRAM")
+			oldring = memory.read_u8(0x1B60,"WRAM")
+		elseif name == "NES Open Tournament Golf" or name == "Mario Open Golf" or hash == "982585F28F4AD585F09F0BEE199BAA06B104D896" or hash == "02795482FFDAD424C12D50115AF8FC696EAE8ACA" or hash == "76EA8F1AD837ED2BE8A096A31E7C92B4B0F13A7E" then -- hashes for VC versions U;E;J
+			if memory.read_u8(0x0094,"RAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0094,"RAM")
+		elseif hash == "81F0FF0CC9BD47195E5ACC1EE4FC95ED1DDA7596" or hash == "532214DACBAC874DEB1C944F894C450FEEFFD2EB" or hash == "31EB8B7E7C867E8DD3996633AB703CA318220519" then -- Golf Japan Course, Japan Course DV2, Professional Course
+			if memory.read_u8(0x0051,"RAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0051,"RAM")
+		elseif hash == "7FE5D5B21BBE6A15CE0A8D327FE4D6EEC87C184D" or hash == "D5A29613806FFD6C8FAE1D81050EA015C4476906" or hash == "BA9ACB65D9D009C08C0FDF521646FA84EBB4C69A" or hash == "F9DF95725822161784598064F50BEF3EA639967D" then -- Golf US Course, US Course DV1, US Course DV2, Special Course
+			if memory.read_u8(0x006E,"RAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x006E,"RAM")
 		end
 	-- SNES Games
 	elseif sysid == "SNES" then
