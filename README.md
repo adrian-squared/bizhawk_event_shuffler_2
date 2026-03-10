@@ -13,9 +13,9 @@ Currently supports
 
 **Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
 
-**NES:** Super Mario Bros., Super Mario Bros. 3, Wrecking Crew, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario's Woods
+**NES:** Super Mario Bros., Super Mario Bros. 3, Wrecking Crew, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario's Woods, NES Open Tournament Golf
 
-**Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB.
+**Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB., Famicom Golf Japan Course, Professional Course, US Course, Special Course 
 
 **SNES:** Super Mario World, Yoshi's Island
 
