@@ -17,7 +17,7 @@ Currently supports
 
 **Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB., Famicom Golf Japan Course, Professional Course, US Course, Special Course 
 
-**SNES:** Super Mario World, Yoshi's Island
+**SNES:** Super Mario World, Yoshi's Island, Super Mario Kart, Wario's Woods, Donkey Kong Country, Country 2
 
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
 
