@@ -319,7 +319,7 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u8(0x1DA2,"WRAM")
-		elseif name == "Wrecking Crew" or hash == "F6571C49F4146C8C9E61092CCEA2B7205B8F3337" then --hash for VC version
+		elseif name == "Wrecking Crew" or hash == "F6571C49F4146C8C9E61092CCEA2B7205B8F3337" or hash == "8847D38111952C56B399F54FD622FCC395BF1752" then --hash for VC and FDS versions
 			if memory.read_u8(0x0092,"RAM") > oldring then
 				ring_swap()
 				return
@@ -388,6 +388,24 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u8(0x000E00,"WRAM")
+		elseif name == "Donkey Kong Country (USA)" or name == "Donkey Kong Country (USA) (Rev 1)" or name == "Donkey Kong Country (USA) (Rev 2)" or name == "Donkey Kong Country (Europe) (En,Fr,De)" or name == "Donkey Kong Country (Europe) (En,Fr,De) (Rev 1)" or name == "Super Donkey Kong (Japan)" or name == "Super Donkey Kong (Japan) (Rev 1)" or hash == "F7223A087CCA2C8D5BBF91C0BCC2D077DE6606FA" or hash == "8078B1D386CEEB2CEC4B4783AB6424938D47BBE9" then --hash for VC/NSO EU/US and JP Versions
+			if memory.read_u8(0x00529,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x00529,"WRAM")
+		elseif name == "Wario's Woods (USA)" or name == "Wario's Woods (Europe)" then
+			if memory.read_u8(0x0120CC,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0120CC,"WRAM")
+		elseif name == "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr) (Rev 1)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (Germany) (En,De)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (Germany) (En,De) (Rev 1)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (Europe) (En,Fr) (Rev 1)" or name == "Super Donkey Kong 2 - Dixie & Diddy (Japan)" or name == "Super Donkey Kong 2 - Dixie & Diddy (Japan) (Rev 1)" or hash == "89DFA86D7A393FFB1B08438AB3D024C31D741E24" or hash == "FAA92FB3A92A8BBDBD962EE3CDB560A9FD8B614D" or hash == "50B44869EECFEBDA7602FA58BB4DB5CA44B0FAC2" or hash == "296F52379DE1967DF789FCD15C209F1AE3216DF1" or hash == "12EF9B67484DAFF20ABBBFB3278C0036B4D3AAB5" then --hashes (in order): NSO, VC US, VC DE, VC EU, VC JP
+			if memory.read_u8(0x008BC,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x008BC,"WRAM")
 		end
 	end
 end
