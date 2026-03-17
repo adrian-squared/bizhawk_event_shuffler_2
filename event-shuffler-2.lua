@@ -401,11 +401,38 @@ function plugin.on_frame(data, settings)
 			end
 			oldring = memory.read_u8(0x0120CC,"WRAM")
 		elseif name == "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr) (Rev 1)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (Germany) (En,De)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (Germany) (En,De) (Rev 1)" or name == "Donkey Kong Country 2 - Diddy's Kong Quest (Europe) (En,Fr) (Rev 1)" or name == "Super Donkey Kong 2 - Dixie & Diddy (Japan)" or name == "Super Donkey Kong 2 - Dixie & Diddy (Japan) (Rev 1)" or hash == "89DFA86D7A393FFB1B08438AB3D024C31D741E24" or hash == "FAA92FB3A92A8BBDBD962EE3CDB560A9FD8B614D" or hash == "50B44869EECFEBDA7602FA58BB4DB5CA44B0FAC2" or hash == "296F52379DE1967DF789FCD15C209F1AE3216DF1" or hash == "12EF9B67484DAFF20ABBBFB3278C0036B4D3AAB5" then --hashes (in order): NSO, VC US, VC DE, VC EU, VC JP
-			if memory.read_u8(0x008BC,"WRAM") > oldring then
+			if memory.read_u8(0x0008BC,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0008BC,"WRAM")
+		elseif name == "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr)" or name == "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (Europe) (En,Fr,De)" or name == "Super Donkey Kong 3 - Nazo no Krems-tou (Japan)" or name == "Super Donkey Kong 3 - Nazo no Krems-tou (Japan) (Rev 1)" then
+			if memory.read_u8(0x0005D3,"WRAM") > oldring then
 				ring_swap()
 				return
 			end
 			oldring = memory.read_u8(0x008BC,"WRAM")
+		elseif name == "Yoshi's Cookie (USA)" or name == "Yoshi's Cookie (Europe)" or name == "Yoshi no Cookie (Japan)" then
+			if memory.read_u8(0x00614E,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x00614E,"WRAM")
+		elseif name == "Dr. Mario (Japan) (NP)" then
+			if memory.read_u8(0x000340,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x000340,"WRAM")
+		end
+	-- N64 Games
+	elseif sysid == "N64" then
+		if name == "Super Mario 64 (USA)" then
+			if memory.read_u8(0x33B219,"RDRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x33B219,"RDRAM")
 		end
 	end
 end
