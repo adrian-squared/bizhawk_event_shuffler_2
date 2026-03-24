@@ -19,9 +19,11 @@ Currently supports
 
 **SNES:** Super Mario World, Yoshi's Island, Super Mario Kart, Wario's Woods, Donkey Kong Country, Country 2, Country 3, Yoshi's Cookie, Dr. Mario
 
-**N64:** Super Mario 64
+**N64:** Super Mario 64, Yoshi's Story
 
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
+
+**Game Boy:** Super Mario Land
 
 **Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
 
