@@ -427,12 +427,27 @@ function plugin.on_frame(data, settings)
 		end
 	-- N64 Games
 	elseif sysid == "N64" then
-		if name == "Super Mario 64 (USA)" then
+		if name == "Super Mario 64 (USA)" or name == "Super Mario 64 (Europe) (En,Fr,De)" or name == "Super Mario 64 (Japan) (Rev A) (Shindou Edition)" or name == "Super Mario 64 (Japan)" or hash == "37F5ED5394D885DE2AFF705074BD76DDC95D3CC9" then --hash for LodgeNet version
 			if memory.read_u8(0x33B219,"RDRAM") > oldring then
 				ring_swap()
 				return
 			end
 			oldring = memory.read_u8(0x33B219,"RDRAM")
+		elseif name == "Yoshi's Story (USA) (En,Ja)" or name == "Yoshi Story (Japan)" or name == "Yoshi's Story (Europe) (En,Fr,De)" or hash == "F489A3CDEF729CD1ADE23996096FE88501E75079" then -- hash for LodgeNet version
+			if memory.read_u8(0x0F895F,"RDRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0F895F,"RDRAM")
+		end
+	-- Game Boy Games
+	elseif sysid == "GB" then
+		if name == "Super Mario Land (World)" or name == "Super Mario Land (World) (Rev A)" then
+			if memory.read_u8(0x7A,"HRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x7A,"HRAM")
 		end
 	end
 end
