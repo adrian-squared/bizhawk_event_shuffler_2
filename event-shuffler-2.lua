@@ -65,7 +65,7 @@ function plugin.on_game_load(data) -- hash is used if game isn't in the database
 end
 
 function ring_swap()
-	oldring = 1000000 -- high number to replace garbage data on game swap (to be taken into account in when you're looking for a decrease in value)
+	oldring = 1000000 -- high number to replace garbage data on game swap (to be taken into account when you're looking for a decrease in value)
 	swap_game()
 end
 
@@ -441,13 +441,49 @@ function plugin.on_frame(data, settings)
 			oldring = memory.read_u8(0x0F895F,"RDRAM")
 		end
 	-- Game Boy Games
-	elseif sysid == "GB" then
+	elseif sysid == "GB" or sysid == "SGB" then
 		if name == "Super Mario Land (World)" or name == "Super Mario Land (World) (Rev A)" then
 			if memory.read_u8(0x7A,"HRAM") > oldring then
 				ring_swap()
 				return
 			end
 			oldring = memory.read_u8(0x7A,"HRAM")
+		elseif name == "Dr. Mario (World)" or name == "Dr. Mario (World) (Rev A)" then
+			if memory.read_u8(0x43,"HRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x43,"HRAM")
+		elseif name == "Yoshi (USA)" or name == "Yossy no Tamago (Japan)" or name == "Mario & Yoshi (Europe)" then
+			if memory.read_u8(0x06D3,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x06D3,"WRAM")
+		elseif name == "Super Mario Land 2 - 6 Golden Coins (USA, Europe)" or name == "Super Mario Land 2 - 6 Golden Coins (USA, Europe) (Rev A)" or name == "Super Mario Land 2 - 6 Golden Coins (USA, Europe) (Rev B)" or name == "Super Mario Land 2 - 6-tsu no Kinka (Japan)" or name == "Super Mario Land 2 - 6-tsu no Kinka (Japan) (Rev B)" or hash == "F536D4D76A22668B8672BB291E4C738ABC55D759" then --hash for Japanese RevA
+			if memory.read_u8(0x0262,"CartRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0262,"CartRAM")
+		elseif name == "Yoshi's Cookie (USA, Europe)" or name == "Yossy no Cookie (Japan)" then
+			if memory.read_u8(0x013B,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x013B,"WRAM")
+		elseif name == "Wario Land - Super Mario Land 3 (World)" then
+			if memory.read_u8(0x097B,"CartRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x097B,"CartRAM")
+		elseif name == "Donkey Kong Land (USA, Europe)" or name == "Super Donkey Kong GB (Japan)" then
+			if memory.read_u8(0x076B,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x076B,"WRAM")
 		end
 	end
 end
