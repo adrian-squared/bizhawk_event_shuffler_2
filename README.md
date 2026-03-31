@@ -23,7 +23,7 @@ Currently supports
 
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
 
-**Game Boy:** Super Mario Land
+**Game Boy:** Super Mario Land, Land 2, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario Land, Donkey Kong Land
 
 **Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
 
