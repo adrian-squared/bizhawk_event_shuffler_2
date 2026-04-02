@@ -440,8 +440,8 @@ function plugin.on_frame(data, settings)
 			end
 			oldring = memory.read_u8(0x0F895F,"RDRAM")
 		end
-	-- Game Boy Games
-	elseif sysid == "GB" or sysid == "SGB" then
+	-- Game Boy & Game Boy Colour Games
+	elseif sysid == "GB" or sysid == "SGB" or sysid == "GBC" then
 		if name == "Super Mario Land (World)" or name == "Super Mario Land (World) (Rev A)" then
 			if memory.read_u8(0x7A,"HRAM") > oldring then
 				ring_swap()
@@ -484,6 +484,45 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u8(0x076B,"WRAM")
+		elseif name == "Donkey Kong Land 2 (USA, Europe)" or name == "Donkey Kong Land (Japan)" or name == "Donkey Kong Land III (USA, Europe)" or name == "Donkey Kong Land III (USA, Europe) (Rev A)" then
+			if memory.read_u8(0x2B,"HRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x2B,"HRAM")
+		elseif name == "Wario Land II (USA, Europe)" or name == "Wario Land 2 (Japan)" then
+			if memory.read_u8(0x050F,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x050F,"WRAM")
+		elseif name == "Super Mario Bros. Deluxe (USA, Europe)" or name == "Super Mario Bros. Deluxe (USA, Europe) (Rev B)" or name == "Super Mario Bros. Deluxe (Japan) (NP)" or name == "Super Mario Bros. Deluxe (USA, Europe) (Rev A)" or hash == "E61D564E1FF19EB4B7C62A6CD96214F2BCA4B01D" then -- hash for Rev 1 JP
+			if memory.read_u8(0x01F2,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x01F2,"WRAM")
+		elseif name == "Donkey Kong GB - Dinky Kong & Dixie Kong (Japan)" then
+			if memory.read_u8(0x2A,"HRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x2A,"HRAM")
+		end
+	-- Virtual Boy Games
+	elseif sysid == "VB" then
+		if hash == "7556A778B60490BDB81774BCBAA7413FC84CB985" then -- Mario Clash
+			if memory.read_u8(0x9A74,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x9A74,"WRAM")
+		elseif hash == "274C328FBD904F20E69172AB826BF8F94CED1BDB" then -- VB Wario Land
+			if memory.read_u8(0x87A8,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x87A8,"WRAM")
 		end
 	end
 end
