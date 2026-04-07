@@ -3,35 +3,39 @@ Plugin for Bizhawk Shuffler 2 inspired by Alistair Aitcheson's Bizhawk Ring Shuf
 
 Currently supports
 
-**Mega Drive:** Sonic 1, 2, 3, & Knuckles, Eraser, Spinball, 3D, 3D Director's Cut hack, Dr. Robotnik's Mean Bean Machine, Sonic & Knuckles+Sonic 1 (Blue Spheres)
+**NES:** Super Mario Bros., Super Mario Bros. 3, Wrecking Crew, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario's Woods, NES Open Tournament Golf
 
-**Mega-CD:** Sonic CD
-
-**32X:** Knuckles' Chaotix
+**Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB., Famicom Golf Japan Course, Professional Course, US Course, Special Course
 
 **Master System:** Sonic 1, 2, Chaos, Spinball, Blast, Dr. Robotnik's Mean Bean Machine, Triple Trouble SMS Hack, Sonic 1 "Perfect System" hack
 
-**Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
+**Mega Drive:** Sonic 1, 2, 3, & Knuckles, Eraser, Spinball, 3D, 3D Director's Cut hack, Dr. Robotnik's Mean Bean Machine, Sonic & Knuckles+Sonic 1 (Blue Spheres)
 
-**NES:** Super Mario Bros., Super Mario Bros. 3, Wrecking Crew, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario's Woods, NES Open Tournament Golf
-
-**Famicom  Disk System:** Super Mario Bros., Bros. 2, All Nigh Nippon SMB., Famicom Golf Japan Course, Professional Course, US Course, Special Course 
+**Game Boy:** Super Mario Land, Land 2, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario Land, Donkey Kong Land, Land 2, Wario Land II
 
 **SNES:** Super Mario World, Yoshi's Island, Super Mario Kart, Wario's Woods, Donkey Kong Country, Country 2, Country 3, Yoshi's Cookie, Dr. Mario
 
-**N64:** Super Mario 64, Yoshi's Story
+**Game Gear:** Sonic 1, 2, Chaos, Drift, Drift 2, Triple Trouble, Spinball, Blast, Dr. Robotnik's Mean Bean Machine
+
+**Mega-CD:** Sonic CD
 
 **Saturn:** Sonic R, Jam (Sonic World), 3D Blast
 
-**Game Boy:** Super Mario Land, Land 2, Dr. Mario, Mario & Yoshi, Yoshi's Cookie, Wario Land, Donkey Kong Land
+**Virtual Boy:** Mario Clash, VB Wario Land
+
+**32X:** Knuckles' Chaotix
+
+**N64:** Super Mario 64, Yoshi's Story
+
+**Game Boy Colour:** Wario Land II, Super Mario Bros. Deluxe, Donkey Kong GB Dinky Kong & Dixie Kong
+
+**Neo-Geo Pocket Colour:** Sonic Pocket Adventure
 
 **Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
 
 **DS:** Sonic Rush, ~~Rush Adventure~~, Colours
 
 **3DS:** Sonic Generations, Lost World
-
-**Neo-Geo Pocket Colour:** Sonic Pocket Adventure
 
 **Arcade:** SegaSonic Bros.
 
