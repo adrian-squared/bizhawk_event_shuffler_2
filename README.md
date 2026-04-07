@@ -27,11 +27,11 @@ Currently supports
 
 **N64:** Super Mario 64, Yoshi's Story
 
-**Game Boy Colour:** Wario Land II, Super Mario Bros. Deluxe, Donkey Kong GB Dinky Kong & Dixie Kong
+**Game Boy Colour:** Wario Land II, Super Mario Bros. Deluxe, Donkey Kong GB Dinky Kong & Dixie Kong, Donkey Kong Country
 
 **Neo-Geo Pocket Colour:** Sonic Pocket Adventure
 
-**Game Boy Advance:** Sonic Advance, Advance 2, Advance 3
+**Game Boy Advance:** Sonic Advance, Advance 2, Advance 3, Mario Kart Super Circuit, Wario Land 4, Super Mario Advance 2, Advance 2, Advance 3, Advance 4
 
 **DS:** Sonic Rush, ~~Rush Adventure~~, Colours
 
