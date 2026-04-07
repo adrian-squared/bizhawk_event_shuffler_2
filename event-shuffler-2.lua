@@ -250,6 +250,36 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u16_be(0x094C,"IWRAM")
+		elseif name == "Mario Kart - Super Circuit (USA)" or name == "Mario Kart - Super Circuit (Europe)" or name == "Mario Kart Advance (Japan)" or hash == "E1DC3A1AA9A6A0FDF1726BB2728279A728101013" or hash == "BA53C107FE4F39018CFF94C0D532314FACC9AEF0" or hash == "7061696811F424F875AF5AF837DC49EFF802A63A" or hash == "D740F9E662C6CB372EB141BD50160B6AB19FD1DB" then -- hashes for EU, US, JP, JP 3DS Virtual Console versions
+			if memory.read_u16_be(0x3D10,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u16_be(0x3D10,"IWRAM")
+		elseif name == "Wario Land 4 (USA, Europe)" or name == "Wario Land Advance (Japan)" or hash == "ED643151B8CC9749A490CAB6BAE26104E1652089" or hash == "2D3E6B124C84877520B482BA1016B8E3C36BAB14" then -- hashes for US/EU & JP Virtual Console versions
+			if memory.read_u32_be(0x0BF8,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u32_be(0x0BF8,"IWRAM")
+		elseif name == "Super Mario Advance 2 - Super Mario World (USA, Australia)" or name == "Super Mario Advance 2 - Super Mario World + Mario Brothers (Japan)" or name == "Super Mario Advance 2 - Super Mario World (Europe) (En,Fr,De,Es)" then
+			if memory.read_u8(0x42FF,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x42FF,"IWRAM")
+		elseif name == "Super Mario Advance 3 - Yoshi's Island (USA)" or name == "Super Mario Advance 3 - Yoshi's Island (Europe) (En,Fr,De,Es,It)" or name == "Super Mario Advance 3 - Yoshi's Island + Mario Brothers (Japan)" or hash == "52C2541C7B369C2894F5F4B045DAC14D41C67FE0" or hash == "DC7868B5300584E7970FE628CC35090E72F98A39" or hash == "FA7486B4721925074BA1FDE9B800EF85A5B5954D" then -- hashes for EU, US, JP VC versions
+			if memory.read_u8(0x6280,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x6280,"IWRAM")
+		elseif name == "Super Mario Advance 4 - Super Mario Bros. 3 (USA)" then
+			if memory.read_u8(0x2C58,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x2C58,"IWRAM")
 		end
 	-- DS Games
 	elseif sysid == "NDS" then
@@ -508,6 +538,12 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u8(0x2A,"HRAM")
+		elseif name == "Donkey Kong Country (USA, Europe) (En,Fr,De,Es,It)" then
+			if memory.read_u8(0x031B,"WRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x031B,"WRAM")
 		end
 	-- Virtual Boy Games
 	elseif sysid == "VB" then
