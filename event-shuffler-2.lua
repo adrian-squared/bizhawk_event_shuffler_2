@@ -274,12 +274,48 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u8(0x6280,"IWRAM")
-		elseif name == "Super Mario Advance 4 - Super Mario Bros. 3 (USA)" then
+		elseif name == "Donkey Kong Country (USA)" or name == "Super Donkey Kong (Japan)" or name == "Donkey Kong Country (Europe) (En,Fr,De,Es,It)" then
+			if memory.read_u8(0x0FDC,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x0FDC,"IWRAM")
+		elseif name == "Super Mario Advance 4 - Super Mario Bros. 3 (USA)" or name == "Super Mario Advance 4 - Super Mario Bros. 3 (USA, Australia) (Rev 1)" or name == "Super Mario Advance 4 - Super Mario Bros. 3 (USA VC)" or name == "Super Mario Advance 4 - Super Mario Bros. 3 (Europe) (En,Fr,De,Es,It)" or name == "Super Mario Advance 4 - Super Mario Bros. 3 (Europe) (En,Fr,De,Es,It) (Rev 1)" or name == "Super Mario Advance 4 - Super Mario 3 + Mario Brothers (Japan)" or name == "Super Mario Advance 4 - Super Mario 3 + Mario Brothers (Japan) (Rev 1)" or name == "Super Mario Advance 4 - Super Mario 3 + Mario Brothers (Japan) (Rev 2)" or hash == "82FA5A6CF09415C2E262931488841B78A524E2C3" or hash == "00667CE3DA4BFEE3182C4445AC2F5483870BE97C" or hash == "72CCC0ECCE6CE08EADCE1B3DA4873CDD91851496" or hash == "CDB79F7926FB61EE7F13EE4CBD61EBE3FB01BA69" or hash == "B65217BB411BF1E9AFF50BF0940C4A0021789F59" then --hashes for US NSO, EU VC, JP VC, EU NSO, JP NSO
 			if memory.read_u8(0x2C58,"IWRAM") > oldring then
 				ring_swap()
 				return
 			end
 			oldring = memory.read_u8(0x2C58,"IWRAM")
+		elseif hash == "8CA35864AE33C9462DD66CEFF1FAC5A79E2E0A6F" or hash == "F08B1F60E41FC2080C50C65EA2B2AF912661ED99" then -- Classic NES Series & Famicom Mini SMB
+			if memory.read_u8(0x795E,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x795E,"IWRAM")
+		elseif hash == "FC396F0EAE55CF19E573AA322F525427E03D3854" or hash == "4FB22FF059833D5206421277409ECE0CDD5D5B46" then -- Classic NES Series & Famicom Mini Dr. Mario
+			if memory.read_u8(0x7296,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x7296,"IWRAM")
+		elseif hash == "5606F9EFFD2D39EFACA739BD2B8F736D529191A6" then -- Famicom Mini Wrecking Crew
+			if memory.read_u8(0x7292,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x7292,"IWRAM")
+		elseif name == "Donkey Kong Country 2 (USA, Australia)" or name == "Donkey Kong Country 2 (Europe) (En,Fr,De,Es,It)" or name == "Super Donkey Kong 2 (Japan)" then
+			if memory.read_u8(0x05F6,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x05F6,"IWRAM")
+		elseif name == "Donkey Kong Country 3 (USA, Australia)" or name == "Donkey Kong Country 3 (Europe) (En,Fr,De,Es,It)" or name == "Super Donkey Kong 3 (Japan)" then
+			if memory.read_u8(0x04AE,"IWRAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u8(0x04AE,"IWRAM")
 		end
 	-- DS Games
 	elseif sysid == "NDS" then
@@ -301,6 +337,12 @@ function plugin.on_frame(data, settings)
 				return
 			end
 			oldring = memory.read_u16_be(0x19B936,"Main RAM")
+		elseif name == "Super Mario 64 DS (USA)" or name == "Super Mario 64 DS (USA) (Rev 1)" or name == "Super Mario 64 DS (Japan)" or name == "Super Mario 64 DS (Japan) (Rev 1)" or name == "Super Mario 64 DS (Europe) (En,Fr,De,Es,It)" or name == "Super Mario 64 DS (Korea)" then
+			if memory.read_u16_be(0x097454,"Main RAM") > oldring then
+				ring_swap()
+				return
+			end
+			oldring = memory.read_u16_be(0x097454,"Main RAM")
 		end
 	-- 3DS Games
 	elseif sysid == "3DS" then
