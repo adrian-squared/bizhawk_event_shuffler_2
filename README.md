@@ -31,9 +31,9 @@ Currently supports
 
 **Neo-Geo Pocket Colour:** Sonic Pocket Adventure
 
-**Game Boy Advance:** Sonic Advance, Advance 2, Advance 3, Mario Kart Super Circuit, Wario Land 4, Super Mario Advance 2, Advance 2, Advance 3, Advance 4
+**Game Boy Advance:** Sonic Advance, Advance 2, Advance 3, Mario Kart Super Circuit, Wario Land 4, Super Mario Advance 2, Advance 2, Advance 3, Advance 4, Donkey Kong Country, Country 2, Country 3
 
-**DS:** Sonic Rush, ~~Rush Adventure~~, Colours
+**DS:** Sonic Rush, ~~Rush Adventure~~, Colours, Super Mario 64 DS
 
 **3DS:** Sonic Generations, Lost World
 
